@@ -1,0 +1,39 @@
+
+
+******Mongodb install & connect with Python******
+-download mongodb --> https://www.mongodb.com/download-center
+-install & set environmnet variable--> C:\Program Files\MongoDB\Server\4.2\bin
+-create a folder in c drive--> C:\data\db
+-open command prompt & type for running mongodb server --> mongod 
+
+-download python & install in your pc from url--> https://www.python.org/downloads/
+-Go to install location copy the path  ---> cd C:\Users\Israt\AppData\Local\Programs\Python\Python37-32\Scripts
+-Open the command prompt & paste  above pathe or add to in environmnet variable
+-Paste command on command prompt for mongodb connector installing --> pip install pymongo 
+-Open python shell  & run command--> import pymongo
+-Connect mongodb database --> client = pymongo.MongoClient("mongodb://localhost:27017/")
+-Create database --> db = client["mydb"]
+-Create table here is collection--> collection = db["customers1"]
+-Add colum--> column = { "first_name": "Enamul","last_name": "Haque","phone": "01921687433", "address": "28 topkhana Road " }
+-Insert data --> x = collection.insert_one(column)
+-Find ---> x = collection.find_one()
+-Print --> print(x) 
+-Find  all data-->for x in collection.find():
+                print(x) 
+				
+-Sort --> mydoc = collection.find().sort("first_name")
+-Print all sort value: for x in mydoc:
+						print(x)
+						
+
+*****In mongodb termnal you can inster data like bellow in mongodb***
+-Run server using --> mongod
+-Open new window --> mongo
+-Show database --> show dbs
+-Use database --> use mydb
+-Insert --> db.customers.insert({"first_name": "Mohsin","last_name": "Haque","phone": "01921687433", "address": "shaitoal"})
+-Show data --> db.customers.find().pretty()
+
+
+
+

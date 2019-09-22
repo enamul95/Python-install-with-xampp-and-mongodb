@@ -1,0 +1,33 @@
+******XAMPP  install & connect with Python******
+-download XAMPP  & install in your pc -->https://www.apachefriends.org/download.html
+-Start mysql & apache server form  XAMPP controll Panel
+
+-download python & install in your pc from url--> https://www.python.org/downloads/
+-Go to install location copy the path  ---> cd C:\Users\Israt\AppData\Local\Programs\Python\Python37-32\Scripts
+-Open the command prompt & paste  above path or add to in environmnet variable
+-open command prompt run the command for installing phpmyadmin connect to python -> pip install PyMySQL
+
+-Open python shell  & run command for phpmyadmin--> import pymysql
+-Create A Database named db
+-Connect Database using command --> db = pymysql.connect(host='localhost',user='root',passwd='', database="bd")
+-Add command --> cursor = db.cursor()
+-For show Database --> query = ("SHOW DATABASES")
+-For Execute Database----> cursor.execute(query)
+-Print Database --> for r in cursor:
+                     print(r)
+					 
+-Create table --> cursor.execute("CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))")
+-Run command --> sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
+-Set values --> val = ("Enamul Haque", "28 topkhan Road Dhaka-1000")
+-Execute --> cursor.execute(sql, val)
+-Commit --> db.commit()
+******Insert Done & show data like *****
+-Query data --> cursor.execute("SELECT * FROM customers")
+
+-Get All data-->rs = cursor.fetchall()
+
+--show all data-->for x in rs:
+                  print(x)
+
+
+
